@@ -10,11 +10,12 @@
 
 
 #define COLEMAK 0 // colemak layer
-#define BASE 1 // qwerty layer
-#define SYMB 2 // symbols
-#define MOUSE 3 // media keys
-#define XMONAD 4 // media keys
-#define NAV 5 // media keys
+#define QWERTY 1 // qwerty layer
+#define QWERTY_BASIC 2 // qwerty layer
+#define SYMB 3 // symbols
+#define MOUSE 4 // media keys
+#define XMONAD 5 // media keys
+#define NAV 6 // media keys
 
 enum custom_keycodes {
   PLACEHOLDER = SAFE_RANGE, // can always be here
@@ -28,8 +29,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [COLEMAK] = LAYOUT_ergodox(
     // left hand
-    KC_EQUAL,        KC_EXLM,      KC_AT,            KC_HASH,         KC_DLR,         KC_PERC,       DF(BASE),
-    KC_DELETE,       KC_Q,         KC_W,             KC_F,            KC_P,           KC_G,          KC_ESCAPE,
+    KC_EQUAL,        KC_EXLM,      KC_AT,            KC_HASH,         KC_DLR,         KC_PERC,       DF(QWERTY_BASIC),
+    KC_TAB,          KC_Q,         KC_W,             KC_F,            KC_P,           KC_G,          KC_ESCAPE,
     KC_BSPACE,       KC_A,         LT(NAV,KC_R),     LT(MOUSE,KC_S),  LT(SYMB,KC_T),  KC_D,
     KC_LSHIFT,       CTL_T(KC_Z),  KC_X,             KC_C,            KC_V,           KC_B,          ALL_T(KC_NO),
     LT(SYMB,KC_GRAVE),  KC_QUOTE,     LALT(KC_LSHIFT),  KC_LEFT,     KC_RIGHT,     
@@ -39,20 +40,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     
                                         
     // right hand
-    DF(BASE),        KC_CIRC,      KC_AMPR,          KC_KP_ASTERISK,  KC_LPRN,          KC_RPRN,           KC_MINUS,
+    DF(QWERTY),        KC_CIRC,      KC_AMPR,          KC_KP_ASTERISK,  KC_LPRN,          KC_RPRN,           KC_MINUS,
     TG(SYMB),        KC_J,         KC_L,             KC_U,            KC_Y,             KC_SCOLON,         KC_BSLASH,
                      KC_H,         KC_N,             KC_E,            KC_I,             LT(MOUSE,KC_O),    GUI_T(KC_QUOTE),
     MEH_T(KC_NO),    KC_K,         KC_M,             KC_COMMA,        KC_DOT,           RCTL_T(KC_SLASH),  KC_RSHIFT,
                                    KC_DOWN,          KC_UP,           KC_LBRACKET,      KC_RBRACKET,       MO(SYMB),
-    KC_LALT,    CTL_T(KC_ESCAPE),
+    KC_RALT,    CTL_T(KC_ESCAPE),
     KC_PGUP,
     KC_PGDOWN,  KC_TAB,  LT(XMONAD,KC_ENTER)
 ),
 
-[BASE] = LAYOUT_ergodox(
+[QWERTY] = LAYOUT_ergodox(
     // left hand
     KC_EQUAL,        KC_EXLM,      KC_AT,            KC_HASH,     KC_DLR,       KC_PERC,  DF(COLEMAK),
-    KC_DELETE,       KC_Q,         KC_W,             KC_E,        KC_R,         KC_T,     KC_ESCAPE,
+    KC_TAB,          KC_Q,         KC_W,             KC_E,        KC_R,         KC_T,     KC_ESCAPE,
     KC_BSPACE,       KC_A,         LT(NAV,KC_S),       LT(MOUSE,KC_D),  LT(SYMB,KC_F),    KC_G,
     KC_LSHIFT,       CTL_T(KC_Z),  KC_X,             KC_C,        KC_V,         KC_B,     ALL_T(KC_NO),
     LT(SYMB,KC_GRAVE),  KC_QUOTE,     LALT(KC_LSHIFT),  KC_LEFT,     KC_RIGHT,
@@ -62,12 +63,35 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
     // right hand
-    DF(COLEMAK),     KC_CIRC,      KC_AMPR,          KC_KP_ASTERISK,  KC_LPRN,          KC_RPRN,              KC_MINUS,
+    DF(QWERTY_BASIC),     KC_CIRC,      KC_AMPR,          KC_KP_ASTERISK,  KC_LPRN,          KC_RPRN,              KC_MINUS,
     TG(SYMB),        KC_Y,         KC_U,             KC_I,            KC_O,             KC_P,                 KC_BSLASH,
                      KC_H,         KC_J,             KC_K,            KC_L,             LT(MOUSE,KC_SCOLON),  GUI_T(KC_QUOTE),
     MEH_T(KC_NO),    KC_N,         KC_M,             KC_COMMA,        KC_DOT,           RCTL_T(KC_SLASH),     KC_RSHIFT,
                                    KC_DOWN,          KC_UP,           KC_LBRACKET,      KC_RBRACKET,          MO(SYMB),
-    KC_LALT,    CTL_T(KC_ESCAPE),
+    KC_RALT,    CTL_T(KC_ESCAPE),
+    KC_PGUP,
+    KC_PGDOWN,  KC_TAB,  LT(XMONAD,KC_ENTER)
+),
+
+[QWERTY_BASIC] = LAYOUT_ergodox(
+    // left hand
+    KC_ESCAPE,       KC_1,         KC_2,             KC_3,        KC_4,         KC_5,     DF(QWERTY),
+    KC_TAB,          KC_Q,         KC_W,             KC_E,        KC_R,         KC_T,     KC_BSPACE,
+    KC_LALT,         KC_A,         KC_S,             KC_D,        KC_F,         KC_G,
+    KC_LSHIFT,       KC_Z,         KC_X,             KC_C,        KC_V,         KC_B,     KC_ENTER,
+    KC_LCTL,         KC_QUOTE,     LALT(KC_LSHIFT),  KC_LEFT,     KC_RIGHT,
+                                             ALT_T(KC_APPLICATION),  KC_LGUI,
+                                                                     KC_HOME,
+                                      LT(SYMB,KC_SPACE),  KC_DELETE,  KC_END,
+
+
+    // right hand
+    DF(COLEMAK),     KC_6,   KC_7,   KC_8,      KC_9,     KC_0,       KC_MINUS,
+    TG(SYMB),        KC_Y,   KC_U,   KC_I,      KC_O,     KC_P,       KC_BSLASH,
+                     KC_H,   KC_J,   KC_K,      KC_L,     KC_SCOLON,  GUI_T(KC_QUOTE),
+    MEH_T(KC_NO),    KC_N,   KC_M,   KC_COMMA,  KC_DOT,   KC_SLASH,   KC_RSHIFT,
+                                   KC_DOWN,   KC_UP,   KC_LBRACKET,   KC_RBRACKET,   MO(SYMB),
+    KC_RALT,    CTL_T(KC_ESCAPE),
     KC_PGUP,
     KC_PGDOWN,  KC_TAB,  LT(XMONAD,KC_ENTER)
 ),
@@ -121,7 +145,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [XMONAD] = LAYOUT_ergodox(
     // left hand
     _______,        LGUI(KC_1),    LGUI(KC_2),       LGUI(KC_3),      LGUI(KC_4),       LGUI(KC_5),      _______,
-    _______,        _______,       _______,          _______,         _______,          _______,         _______,
+    _______,        _______,       _______,          _______,         LGUI(KC_P),       _______,         _______,
     _______,        _______,       _______,          _______,         _______,          _______,
     _______,        _______,       _______,          _______,         _______,          _______,         _______,
     _______,        _______,       _______,          _______,         _______,
@@ -183,9 +207,8 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
 };
 
 void matrix_init_user(void) {
-#ifdef RGBLIGHT_COLOR_LAYER_0
-  rgblight_setrgb(RGBLIGHT_COLOR_LAYER_0);
-#endif
+  rgblight_setrgb(0xff, 0xff, 0xff);
+  default_layer_state_set_kb(1);
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -214,7 +237,28 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
-uint32_t layer_state_set_user(uint32_t state) {
+uint32_t default_layer_state_set_kb(uint32_t state) {
+  int layer = state;
+  if(layer == (1 << COLEMAK)) {
+    ergodox_right_led_1_on();
+    ergodox_right_led_2_off();
+    ergodox_right_led_3_off();
+  }
+  else if(layer == (1 << QWERTY)) {
+    ergodox_right_led_1_off();
+    ergodox_right_led_2_on();
+    ergodox_right_led_3_off();
+  }
+  else if(layer == (1 << QWERTY_BASIC)) {
+    ergodox_right_led_1_off();
+    ergodox_right_led_2_off();
+    ergodox_right_led_3_on();
+  }
+  return state;
+}
+
+
+uint32_t layer_state_set_user_disable(uint32_t state) {
 
     uint8_t layer = biton32(state);
 
