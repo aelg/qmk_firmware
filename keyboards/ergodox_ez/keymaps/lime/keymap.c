@@ -36,7 +36,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LT(SYMB,KC_GRAVE),  KC_QUOTE,     LALT(KC_LSHIFT),  KC_LEFT,     KC_RIGHT,     
                                                                                ALT_T(KC_APPLICATION),  KC_LGUI,
                                                                                                        KC_HOME,
-                                                                        LT(SYMB,KC_SPACE),  KC_DELETE,  KC_END,
+                                                                                 KC_SPACE,  KC_DELETE,  KC_END,
     
                                         
     // right hand
@@ -59,7 +59,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LT(SYMB,KC_GRAVE),  KC_QUOTE,     LALT(KC_LSHIFT),  KC_LEFT,     KC_RIGHT,
                                              ALT_T(KC_APPLICATION),  KC_LGUI,
                                                                      KC_HOME,
-                                      LT(SYMB,KC_SPACE),  KC_DELETE,  KC_END,
+                                               KC_SPACE,  KC_DELETE,  KC_END,
 
 
     // right hand
@@ -82,7 +82,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LCTL,         KC_QUOTE,     LALT(KC_LSHIFT),  KC_LEFT,     KC_RIGHT,
                                              ALT_T(KC_APPLICATION),  KC_LGUI,
                                                                      KC_HOME,
-                                      LT(SYMB,KC_SPACE),  KC_DELETE,  KC_END,
+                                               KC_SPACE,  KC_DELETE,  KC_END,
 
 
     // right hand
