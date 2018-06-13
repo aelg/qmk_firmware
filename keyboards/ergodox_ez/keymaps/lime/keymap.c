@@ -29,10 +29,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [COLEMAK] = LAYOUT_ergodox(
     // left hand
-    KC_EQUAL,        KC_EXLM,      KC_AT,            KC_HASH,         KC_DLR,         KC_PERC,       DF(QWERTY_BASIC),
-    KC_TAB,          KC_Q,         KC_W,             KC_F,            KC_P,           KC_G,          KC_ESCAPE,
-    KC_BSPACE,       KC_A,         LT(NAV,KC_R),     LT(MOUSE,KC_S),  LT(SYMB,KC_T),  KC_D,
-    KC_LSHIFT,       CTL_T(KC_Z),  KC_X,             KC_C,            KC_V,           KC_B,          ALL_T(KC_NO),
+    LT(SYMB,KC_EQUAL), KC_EXLM,      KC_AT,            KC_HASH,         KC_DLR,         KC_PERC,       DF(QWERTY_BASIC),
+    LT(MOUSE,KC_TAB),  KC_Q,         KC_W,             KC_F,            KC_P,           KC_G,          KC_ESCAPE,
+    LT(NAV,KC_BSPACE), KC_A,         KC_R,             KC_S,            KC_T,           KC_D,
+    KC_LSHIFT,         CTL_T(KC_Z),  KC_X,             KC_C,            KC_V,           KC_B,          KC_LCTL,
     LT(SYMB,KC_GRAVE),  KC_QUOTE,     LALT(KC_LSHIFT),  KC_LEFT,     KC_RIGHT,     
                                                                                ALT_T(KC_APPLICATION),  KC_LGUI,
                                                                                                        KC_HOME,
@@ -40,9 +40,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     
                                         
     // right hand
-    DF(QWERTY),        KC_CIRC,      KC_AMPR,          KC_KP_ASTERISK,  KC_LPRN,          KC_RPRN,           KC_MINUS,
+    DF(QWERTY),      KC_CIRC,      KC_AMPR,          KC_KP_ASTERISK,  KC_LPRN,          KC_RPRN,           KC_MINUS,
     TG(SYMB),        KC_J,         KC_L,             KC_U,            KC_Y,             KC_SCOLON,         KC_BSLASH,
-                     KC_H,         KC_N,             KC_E,            KC_I,             LT(MOUSE,KC_O),    GUI_T(KC_QUOTE),
+                     KC_H,         KC_N,             KC_E,            KC_I,             KC_O,              GUI_T(KC_QUOTE),
     MEH_T(KC_NO),    KC_K,         KC_M,             KC_COMMA,        KC_DOT,           RCTL_T(KC_SLASH),  KC_RSHIFT,
                                    KC_DOWN,          KC_UP,           KC_LBRACKET,      KC_RBRACKET,       MO(SYMB),
     KC_RALT,    CTL_T(KC_ESCAPE),
@@ -55,7 +55,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_EQUAL,        KC_EXLM,      KC_AT,            KC_HASH,     KC_DLR,       KC_PERC,  DF(COLEMAK),
     KC_TAB,          KC_Q,         KC_W,             KC_E,        KC_R,         KC_T,     KC_ESCAPE,
     KC_BSPACE,       KC_A,         LT(NAV,KC_S),       LT(MOUSE,KC_D),  LT(SYMB,KC_F),    KC_G,
-    KC_LSHIFT,       CTL_T(KC_Z),  KC_X,             KC_C,        KC_V,         KC_B,     ALL_T(KC_NO),
+    KC_LSHIFT,       CTL_T(KC_Z),  KC_X,             KC_C,        KC_V,         KC_B,     KC_LCTL,
     LT(SYMB,KC_GRAVE),  KC_QUOTE,     LALT(KC_LSHIFT),  KC_LEFT,     KC_RIGHT,
                                              ALT_T(KC_APPLICATION),  KC_LGUI,
                                                                      KC_HOME,
@@ -63,11 +63,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
     // right hand
-    DF(QWERTY_BASIC),     KC_CIRC,      KC_AMPR,          KC_KP_ASTERISK,  KC_LPRN,          KC_RPRN,              KC_MINUS,
-    TG(SYMB),        KC_Y,         KC_U,             KC_I,            KC_O,             KC_P,                 KC_BSLASH,
-                     KC_H,         KC_J,             KC_K,            KC_L,             LT(MOUSE,KC_SCOLON),  GUI_T(KC_QUOTE),
-    MEH_T(KC_NO),    KC_N,         KC_M,             KC_COMMA,        KC_DOT,           RCTL_T(KC_SLASH),     KC_RSHIFT,
-                                   KC_DOWN,          KC_UP,           KC_LBRACKET,      KC_RBRACKET,          MO(SYMB),
+    DF(QWERTY_BASIC),  KC_CIRC,      KC_AMPR,          KC_KP_ASTERISK,  KC_LPRN,          KC_RPRN,              KC_MINUS,
+    TG(SYMB),          KC_Y,         KC_U,             KC_I,            KC_O,             KC_P,                 KC_BSLASH,
+                       KC_H,         KC_J,             KC_K,            KC_L,             KC_SCOLON,            GUI_T(KC_QUOTE),
+    MEH_T(KC_NO),      KC_N,         KC_M,             KC_COMMA,        KC_DOT,           RCTL_T(KC_SLASH),     KC_RSHIFT,
+                                     KC_DOWN,          KC_UP,           KC_LBRACKET,      KC_RBRACKET,          MO(SYMB),
     KC_RALT,    CTL_T(KC_ESCAPE),
     KC_PGUP,
     KC_PGDOWN,  KC_TAB,  LT(XMONAD,KC_ENTER)
@@ -171,7 +171,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______,        _______,       _______,          _______,         _______,          _______,         _______,
     _______,        _______,       _______,          _______,         _______,          _______,
     _______,        _______,       _______,          _______,         _______,          _______,         _______,
-    _______,        _______,       _______,          _______,         _______,
+    _______,        _______,       _______,          LCTL(KC_LEFT),   LCTL(KC_RIGHT),
                                                                                _______,    _______,
                                                                                            _______,
                                                             LGUI(KC_SPACE),    _______,    _______,
