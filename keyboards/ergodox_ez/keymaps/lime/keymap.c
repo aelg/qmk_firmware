@@ -31,15 +31,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // left hand
     LT(SYMB,KC_EQUAL), KC_EXLM,      KC_AT,            KC_HASH,         KC_DLR,         KC_PERC,       DF(QWERTY_BASIC),
     LT(MOUSE,KC_TAB),  KC_Q,         KC_W,             KC_F,            KC_P,           KC_G,          KC_ESCAPE,
-    LT(NAV,KC_BSPACE), KC_A,         KC_R,             KC_S,            KC_T,           KC_D,
+    KC_BSPACE,         KC_A,         LT(NAV,KC_R),     KC_S,            KC_T,           KC_D,
     KC_LSHIFT,         CTL_T(KC_Z),  KC_X,             KC_C,            KC_V,           KC_B,          KC_LCTL,
-    LT(SYMB,KC_GRAVE),  KC_QUOTE,     LALT(KC_LSHIFT),  KC_LEFT,     KC_RIGHT,     
+    CTL_T(KC_GRAVE),   KC_MINUS,     KC_RALT,    KC_LEFT,     KC_RIGHT,
                                                                                ALT_T(KC_APPLICATION),  KC_LGUI,
                                                                                                        KC_HOME,
                                                                                  KC_SPACE,  KC_DELETE,  KC_END,
     
                                         
-    // right hand
+    // right hand,
     DF(QWERTY),      KC_CIRC,      KC_AMPR,          KC_KP_ASTERISK,  KC_LPRN,          KC_RPRN,           KC_MINUS,
     TG(SYMB),        KC_J,         KC_L,             KC_U,            KC_Y,             KC_SCOLON,         KC_BSLASH,
                      KC_H,         KC_N,             KC_E,            KC_I,             KC_O,              GUI_T(KC_QUOTE),
@@ -121,7 +121,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [MOUSE] = LAYOUT_ergodox(
     // left hand
-    _______,        _______,       _______,          _______,         _______,          _______,         _______,
+    _______,        LGUI(KC_1),    LGUI(KC_2),       LGUI(KC_3),      LGUI(KC_4),       LGUI(KC_5),      _______,
     _______,        _______,       KC_MS_WH_LEFT,    KC_MS_UP,        KC_MS_WH_RIGHT,   KC_MS_WH_UP,     _______,
     _______,        _______,       KC_MS_LEFT,       _______,         KC_MS_RIGHT,      KC_MS_WH_DOWN,
     _______,        _______,       _______,          _______,         _______,          _______,         _______,
@@ -132,7 +132,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
     // right hand
-    _______,        _______,       _______,          _______,         _______,          _______,         _______,
+    _______,        LGUI(KC_6),    LGUI(KC_7),       LGUI(KC_8),      LGUI(KC_9),       _______,         _______,
     _______,        KC_MS_WH_UP,   KC_MS_WH_LEFT,    KC_MS_UP,        KC_MS_WH_RIGHT,   _______,         _______,
                     KC_MS_WH_DOWN, KC_MS_LEFT,       KC_MS_DOWN,      KC_MS_RIGHT,      _______,         KC_MEDIA_PLAY_PAUSE,
     _______,        _______,       _______,          _______,         _______,          _______,         _______,
@@ -167,7 +167,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 [NAV] = LAYOUT_ergodox(
     // left hand
-    _______,        _______,       _______,          _______,         _______,          _______,         _______,
+    _______,        KC_1,          KC_2,             KC_3,            KC_4,             KC_5,            _______,
     _______,        _______,       _______,          _______,         _______,          _______,         _______,
     _______,        _______,       _______,          _______,         _______,          _______,
     _______,        _______,       _______,          _______,         _______,          _______,         _______,
@@ -178,7 +178,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
     // right hand
-    _______,        _______,       _______,          _______,         _______,          _______,         _______,
+    _______,        KC_6,          KC_7,             KC_8,            KC_9,             KC_0,         _______,
     _______,        KC_PGUP,       KC_HOME,          KC_UP,           KC_END,           _______,         _______,
                     KC_PGDOWN,     KC_LEFT,          KC_DOWN,         KC_RIGHT,         _______,         _______,
     _______,        _______,       _______,          _______,         _______,          _______,         _______,
