@@ -237,7 +237,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
-uint32_t default_layer_state_set_kb(uint32_t state) {
+uint32_t default_layer_state_set_user(uint32_t state) {
   int layer = state;
   if(layer == (1 << COLEMAK)) {
     ergodox_right_led_1_on();
