@@ -33,7 +33,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     LT(MOUSE,KC_TAB),  KC_Q,                KC_W,             KC_F,            KC_P,           KC_G,          KC_ESCAPE,
     KC_BSPACE,         KC_A,                LT(NAV,KC_R),     KC_S,            KC_T,           KC_D,
     KC_LSHIFT,         CTL_T(KC_Z),         KC_X,             KC_C,            KC_V,           KC_B,          KC_LCTL,
-    CTL_T(KC_GRAVE),   LT(XMONAD,KC_MINUS), KC_RALT,    KC_LEFT,     KC_RIGHT,
+    CTL_T(KC_GRAVE),   LT(XMONAD,KC_MINUS), KC_RALT,    KC_LALT,     KC_LGUI,
                                                                                ALT_T(KC_APPLICATION),  KC_LGUI,
                                                                                                        KC_HOME,
                                                                                  KC_SPACE,  KC_DELETE,  KC_END,
